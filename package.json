@@ -1,52 +1,46 @@
 {
   "name": "gnls",
-  "publisher": "msedge-dev",
-  "version": "0.1.4",
   "displayName": "GN Language Server",
+  "version": "0.1.4",
   "description": "Code IntelliSense for GN build system.",
-  "license": "SEE LICENSE IN LICENSE",
-  "categories": [
-    "Programming Languages"
-  ],
-  "keywords": [
-    "gn",
-    "chromium"
-  ],
   "homepage": "https://github.com/microsoft/gnls",
+  "bugs": {
+    "url": "https://github.com/microsoft/gnls/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/microsoft/gnls.git"
   },
-  "bugs": {
-    "url": "https://github.com/microsoft/gnls/issues"
-  },
+  "license": "SEE LICENSE IN LICENSE",
+  "publisher": "msedge-dev",
   "main": "./build/index.js",
-  "engines": {
-    "vscode": "^1.83.0"
+  "scripts": {
+    "build": "ts-node script build",
+    "debug": "ts-node script debug",
+    "format": "ts-node script format",
+    "package": "ts-node script package",
+    "prepare": "ts-node script prepare"
   },
-  "extensionKind": [
-    "workspace"
-  ],
   "contributes": {
+    "grammars": [
+      {
+        "language": "gn",
+        "path": "./build/grammar.json",
+        "scopeName": "source.gn"
+      }
+    ],
     "languages": [
       {
-        "id": "gn",
         "aliases": [
           "GN",
           "gn"
         ],
+        "configuration": "./build/language.json",
         "extensions": [
           "gn",
           "gni"
         ],
-        "configuration": "./build/language.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "gn",
-        "scopeName": "source.gn",
-        "path": "./build/grammar.json"
+        "id": "gn"
       }
     ]
   },
@@ -58,14 +52,10 @@
     "@types/jest": "^29.5.7",
     "@types/node": "^20.8.10",
     "@types/vscode": "^1.83.2",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
     "@vscode/vsce": "^2.22.0",
-    "eslint": "^8.52.0",
     "jest": "^29.7.0",
     "node-addon-api": "^7.0.0",
     "node-gyp": "^10.0.0",
-    "prettier": "^3.0.3",
     "rollup": "^4.2.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
@@ -76,41 +66,7 @@
     "vscode-languageserver-textdocument": "^1.0.11",
     "vscode-uri": "^3.0.8"
   },
-  "scripts": {
-    "prepare": "ts-node script prepare",
-    "build": "ts-node script build",
-    "debug": "ts-node script debug",
-    "test": "ts-node script test",
-    "format": "ts-node script format",
-    "package": "ts-node script package"
-  },
-  "eslintConfig": {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": true,
-      "tsconfigRootDir": "."
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended-type-checked",
-      "plugin:@typescript-eslint/stylistic-type-checked"
-    ],
-    "rules": {
-      "no-undef": "off"
-    }
-  },
-  "prettier": {
-    "printWidth": 120,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "bracketSpacing": false,
-    "bracketSameLine": true,
-    "trailingComma": "all",
-    "arrowParens": "always",
-    "quoteProps": "consistent"
-  }
+  "extensionKind": [
+    "workspace"
+  ]
 }
