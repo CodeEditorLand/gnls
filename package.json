@@ -1,31 +1,11 @@
 {
-	"name": "gnls",
-	"displayName": "GN Language Server",
-	"version": "0.0.1",
-	"private": false,
-	"description": "Code IntelliSense for GN build system.",
-	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
-	"bugs": {
-		"url": "https://github.com/CodeEditorLand/Foundation/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
 	"author": {
-		"name": "Playform",
 		"email": "Hello@Playform.Cloud",
+		"name": "Playform",
 		"url": "https://playform.cloud"
 	},
-	"type": "module",
-	"main": "./build/index.js",
-	"scripts": {
-		"build": "ts-node script build",
-		"debug": "ts-node script debug",
-		"package": "ts-node script package",
-		"prepare": "ts-node script prepare",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
 	},
 	"contributes": {
 		"grammars": [
@@ -50,6 +30,7 @@
 			}
 		]
 	},
+	"description": "Code IntelliSense for GN build system.",
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "25.0.7",
 		"@rollup/plugin-node-resolve": "15.2.3",
@@ -67,16 +48,35 @@
 		"ts-node": "10.9.2",
 		"tslib": "2.6.2",
 		"typescript": "5.4.2",
-		"typescript-esbuild": "0.4.5",
+		"typescript-esbuild": "",
 		"vscode-languageclient": "9.0.1",
 		"vscode-languageserver": "9.0.1",
 		"vscode-languageserver-textdocument": "1.0.11",
 		"vscode-uri": "3.0.8"
 	},
+	"displayName": "GN Language Server",
+	"extensionKind": [
+		"workspace"
+	],
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"license": "SEE LICENSE IN LICENSE",
+	"main": "./build/index.js",
+	"name": "gnls",
+	"private": false,
 	"publishConfig": {
 		"access": "public"
 	},
-	"extensionKind": [
-		"workspace"
-	]
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"scripts": {
+		"build": "ts-node script build",
+		"debug": "ts-node script debug",
+		"package": "ts-node script package",
+		"prepare": "ts-node script prepare",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+	},
+	"type": "module",
+	"version": "0.0.1"
 }
