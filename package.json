@@ -1,27 +1,7 @@
 {
 	"name": "gnls",
 	"displayName": "GN Language Server",
-	"version": "0.0.1",
-	"private": false,
 	"description": "Code IntelliSense for GN build system.",
-	"keywords": [
-		"land"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/Gnls#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/Gnls/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/Gnls.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "🛬 Land —",
-		"email": "Land@PlayForm.Cloud",
-		"url": "HTTPS://Land.PlayForm.Cloud"
-	},
-	"type": "module",
 	"main": "./build/index.js",
 	"scripts": {
 		"Document": "Document 'Source/**/*.ts'",
@@ -55,14 +35,10 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.7",
-		"@playform/document": "0.0.6",
 		"@types/node": "20.12.10",
 		"node-addon-api": "8.0.0",
 		"node-gyp": "10.1.0",
 		"tslib": "2.6.2"
-	},
-	"publishConfig": {
-		"access": "public"
 	},
 	"extensionKind": [
 		"workspace"
