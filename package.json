@@ -32,10 +32,10 @@
 		]
 	},
 	"devDependencies": {
-		"@types/node": "^20.8.10",
-		"node-addon-api": "^7.0.0",
-		"node-gyp": "^10.0.0",
-		"tslib": "^2.6.2"
+		"@types/node": "20.8.10",
+		"node-addon-api": "7.0.0",
+		"node-gyp": "10.0.0",
+		"tslib": "2.6.2"
 	},
 	"extensionKind": [
 		"workspace"
