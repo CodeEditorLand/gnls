@@ -6,4 +6,3 @@ compile_commands.json
 *.tgz
 *.swp
 *.vsix
-.DS_Store
