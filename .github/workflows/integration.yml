@@ -1,7 +1,7 @@
 name: Integration
 on:
-  push: {branches: [Current]}
-  pull_request: {branches: [Current]}
+  push: {branches: [main]}
+  pull_request: {branches: [main]}
 jobs:
   validate:
     name: Validate
