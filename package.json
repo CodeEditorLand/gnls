@@ -1,43 +1,116 @@
 {
-	"name": "gnls",
-	"displayName": "GN Language Server",
-	"description": "Code IntelliSense for GN build system.",
-	"main": "./build/index.js",
-	"scripts": {
-		"build": "ts-node script build",
-		"debug": "ts-node script debug",
-		"prepare": "ts-node script prepare"
-	},
-	"contributes": {
-		"grammars": [
-			{
-				"language": "gn",
-				"path": "./build/grammar.json",
-				"scopeName": "source.gn"
-			}
-		],
-		"languages": [
-			{
-				"aliases": [
-					"GN",
-					"gn"
-				],
-				"configuration": "./build/language.json",
-				"extensions": [
-					"gn",
-					"gni"
-				],
-				"id": "gn"
-			}
-		]
-	},
-	"devDependencies": {
-		"@types/node": "^20.14.2",
-		"node-addon-api": "^8.0.0",
-		"node-gyp": "^10.1.0",
-		"tslib": "^2.6.3"
-	},
-	"extensionKind": [
-		"workspace"
-	]
+  "name": "gnls",
+  "publisher": "msedge-dev",
+  "version": "0.1.4",
+  "displayName": "GN Language Server",
+  "description": "Code IntelliSense for GN build system.",
+  "license": "SEE LICENSE IN LICENSE",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "gn",
+    "chromium"
+  ],
+  "homepage": "https://github.com/microsoft/gnls",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/gnls.git"
+  },
+  "bugs": {
+    "url": "https://github.com/microsoft/gnls/issues"
+  },
+  "main": "./build/index.js",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "extensionKind": [
+    "workspace"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gn",
+        "aliases": [
+          "GN",
+          "gn"
+        ],
+        "extensions": [
+          "gn",
+          "gni"
+        ],
+        "configuration": "./build/language.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gn",
+        "scopeName": "source.gn",
+        "path": "./build/grammar.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/jest": "^29.5.7",
+    "@types/node": "^20.8.10",
+    "@types/vscode": "^1.83.2",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.52.0",
+    "jest": "^29.7.0",
+    "node-addon-api": "^7.0.0",
+    "node-gyp": "^10.0.0",
+    "prettier": "^3.0.3",
+    "rollup": "^4.2.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.0.4",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11",
+    "vscode-uri": "^3.0.8"
+  },
+  "scripts": {
+    "prepare": "ts-node script prepare",
+    "build": "ts-node script build",
+    "debug": "ts-node script debug",
+    "test": "ts-node script test",
+    "format": "ts-node script format",
+    "package": "ts-node script package"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": true,
+      "tsconfigRootDir": "."
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended-type-checked",
+      "plugin:@typescript-eslint/stylistic-type-checked"
+    ],
+    "rules": {
+      "no-undef": "off"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSpacing": false,
+    "bracketSameLine": true,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "quoteProps": "consistent"
+  }
 }
