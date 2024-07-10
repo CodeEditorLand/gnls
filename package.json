@@ -32,8 +32,8 @@
 		]
 	},
 	"devDependencies": {
-		"@types/node": "20.14.9",
-		"node-addon-api": "8.0.0",
+		"@types/node": "20.14.10",
+		"node-addon-api": "8.1.0",
 		"node-gyp": "10.1.0",
 		"tslib": "2.6.3"
 	},
