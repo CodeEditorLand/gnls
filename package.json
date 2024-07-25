@@ -1,6 +1,4 @@
 {
-<<<<<<< HEAD
-=======
 	"name": "gnls",
 	"displayName": "GN Language Server",
 	"description": "Code IntelliSense for GN build system.",
@@ -10,7 +8,6 @@
 		"debug": "ts-node script debug",
 		"prepare": "ts-node script prepare"
 	},
->>>>>>> bfe57a06d97c0aab152c985cc1c6f8dfc0655c4c
 	"contributes": {
 		"grammars": [
 			{
@@ -34,26 +31,6 @@
 			}
 		]
 	},
-<<<<<<< HEAD
-	"description": "Code IntelliSense for GN build system.",
-	"devDependencies": {
-		"@types/node": "^20.8.10",
-		"node-addon-api": "^7.0.0",
-		"node-gyp": "^10.0.0",
-		"tslib": "^2.6.2"
-	},
-	"displayName": "GN Language Server",
-	"extensionKind": [
-		"workspace"
-	],
-	"main": "./build/index.js",
-	"name": "gnls",
-	"scripts": {
-		"build": "ts-node script build",
-		"debug": "ts-node script debug",
-		"prepare": "ts-node script prepare"
-	}
-=======
 	"devDependencies": {
 		"@types/node": "20.14.12",
 		"node-addon-api": "8.1.0",
@@ -63,5 +40,4 @@
 	"extensionKind": [
 		"workspace"
 	]
->>>>>>> bfe57a06d97c0aab152c985cc1c6f8dfc0655c4c
 }
