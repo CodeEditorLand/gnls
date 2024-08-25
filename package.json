@@ -24,10 +24,10 @@
 	},
 	"description": "Code IntelliSense for GN build system.",
 	"devDependencies": {
-		"@types/node": "22.4.0",
+		"@types/node": "22.5.0",
 		"node-addon-api": "8.1.0",
 		"node-gyp": "10.2.0",
-		"tslib": "2.6.3"
+		"tslib": "2.7.0"
 	},
 	"displayName": "GN Language Server",
 	"extensionKind": [
