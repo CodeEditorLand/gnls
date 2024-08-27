@@ -12,7 +12,7 @@ Code IntelliSense for [GN](https://gn.googlesource.com/gn) build system.
     files.
 -   Code format.
 
-## Usage
+## 🛠️ Usage
 
 Currently there are no options to configure. Simply install the corresponding
 editor extension, and you are good to go:
