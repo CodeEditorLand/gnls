@@ -1,13 +1,4 @@
 {
-	"name": "gnls",
-	"displayName": "GN Language Server",
-	"description": "Code IntelliSense for GN build system.",
-	"main": "./build/index.js",
-	"scripts": {
-		"build": "ts-node script build",
-		"debug": "ts-node script debug",
-		"prepare": "ts-node script prepare"
-	},
 	"contributes": {
 		"grammars": [
 			{
@@ -31,13 +22,22 @@
 			}
 		]
 	},
+	"description": "Code IntelliSense for GN build system.",
 	"devDependencies": {
 		"@types/node": "22.7.3",
 		"node-addon-api": "8.1.0",
 		"node-gyp": "10.2.0",
 		"tslib": "2.7.0"
 	},
+	"displayName": "GN Language Server",
 	"extensionKind": [
 		"workspace"
-	]
+	],
+	"main": "./build/index.js",
+	"name": "gnls",
+	"scripts": {
+		"build": "ts-node script build",
+		"debug": "ts-node script debug",
+		"prepare": "ts-node script prepare"
+	}
 }
