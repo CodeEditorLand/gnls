@@ -24,7 +24,7 @@
 	},
 	"description": "Code IntelliSense for GN build system.",
 	"devDependencies": {
-		"@types/node": "22.7.4",
+		"@types/node": "22.7.5",
 		"node-addon-api": "8.2.0",
 		"node-gyp": "10.2.0",
 		"tslib": "2.7.0"
