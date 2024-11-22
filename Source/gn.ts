@@ -27,7 +27,9 @@ export interface Error {
 export interface Context {
 	root: string;
 	token?: { type: TokenType; value: string; range: Range };
+
 	function?: { name: string; arguments: string[] };
+
 	variable?: string;
 }
 

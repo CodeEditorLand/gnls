@@ -24,19 +24,25 @@ export function targetVariables(target?: string): string[] {
 	const groups = target
 		? (data.targetGroups[target] ?? [])
 		: Object.keys(data.groupVariables);
+
 	const variables = groups.flatMap((group) => data.groupVariables[group]);
+
 	return [...new Set(variables)];
 }
 
 export function functionDetail(name?: string): FunctionDetail {
 	if (!name) return {};
+
 	if (data.targetGroups[name]) return { isTarget: true };
+
 	return data.functionDetail[name] ?? {};
 }
 
 export function variableDetail(name?: string): VariableDetail {
 	if (!name) return {};
+
 	if (data.builtinVariables[name]) return { isBuiltin: true };
+
 	return data.variableDetail[name] ?? {};
 }
 

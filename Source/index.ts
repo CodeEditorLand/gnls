@@ -6,6 +6,7 @@ let client: LanguageClient | undefined;
 
 export async function activate(context: ExtensionContext) {
 	const module = context.asAbsolutePath(path.join("build", "server.js"));
+
 	const transport = TransportKind.ipc;
 	client = new LanguageClient(
 		"GN Language Server",
