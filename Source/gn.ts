@@ -2,6 +2,7 @@ import * as os from "os";
 import * as ls from "vscode-languageserver/node";
 
 export type TokenType = "identifier" | "literal" | "";
+
 export type HelpType = "all" | "function" | "variable";
 
 // TODO(banl): either reuse types from vscode-languageserver package as
@@ -57,20 +58,27 @@ const addon = require(`../build/${os.platform()}-${os.arch()}.node`) as Record<
 	string,
 	unknown
 >;
+
 export const update = addon.update as (file: string, content: string) => null;
+
 export const close = addon.close as (file: string) => null;
+
 export const validate = addon.validate as (file: string) => Error | null;
+
 export const analyze = addon.analyze as (
 	file: string,
 	line: number,
 	column: number,
 ) => Context | null;
+
 export const parse = addon.parse as (
 	file: string,
 	content?: string,
 ) => Scope | null;
+
 export const format = addon.format as (
 	file: string,
 	content?: string,
 ) => string | null;
+
 export const help = addon.help as (type: HelpType, name: string) => Help | null;
