@@ -35,11 +35,15 @@ documents.onDidChangeContent(async (event) => {
 	const file = URI.parse(uri).fsPath;
 
 	const uris = files.get(file) ?? new Set();
+
 	uris.add(uri);
+
 	files.set(file, uris);
 
 	const content = event.document.getText();
+
 	gn.update(file, content);
+
 	await connection.sendDiagnostics({
 		uri: uri,
 		diagnostics: getDiagnostics(file),
@@ -58,8 +62,10 @@ documents.onDidClose(async (event) => {
 
 		if (!uris.size) files.delete(file);
 	}
+
 	if (!files.has(file)) {
 		gn.close(file);
+
 		await connection.sendDiagnostics({
 			uri: uri,
 			diagnostics: [],
@@ -159,6 +165,7 @@ function getDiagnostics(file: string): ls.Diagnostic[] {
 			message: [error.message, error.help].join("\n").trim(),
 		});
 	}
+
 	return result;
 }
 
@@ -176,11 +183,13 @@ function getFunctionCompletion(name: string): ls.CompletionItem {
 
 	if (help) {
 		result.detail = help.basic;
+
 		result.documentation = {
 			kind: "markdown",
 			value: help.link,
 		};
 	}
+
 	return result;
 }
 
@@ -198,11 +207,13 @@ function getVariableCompletion(name: string): ls.CompletionItem {
 
 	if (help) {
 		result.detail = help.basic;
+
 		result.documentation = {
 			kind: "markdown",
 			value: help.link,
 		};
 	}
+
 	return result;
 }
 
@@ -267,6 +278,7 @@ function getCompletions(
 								});
 
 								const scope = gn.parse(filepath, content);
+
 								scope?.declares.forEach((declare) => {
 									const func = declare.function;
 
@@ -296,6 +308,7 @@ function getCompletions(
 							const entries = fs.readdirSync(absolute, {
 								withFileTypes: true,
 							});
+
 							entries.forEach((entry) => {
 								if (entry.isDirectory()) {
 									result.push(
@@ -311,10 +324,13 @@ function getCompletions(
 					}
 				}
 			}
+
 			break;
 		}
+
 		default: {
 			result.push(...data.builtinFunctions().map(getFunctionCompletion));
+
 			result.push(...data.builtinVariables().map(getVariableCompletion));
 
 			if (context?.function) {
@@ -343,9 +359,11 @@ function getCompletions(
 					...data.targetFunctions().map(getFunctionCompletion),
 				);
 			}
+
 			break;
 		}
 	}
+
 	return result;
 }
 
@@ -369,6 +387,7 @@ function getHover(
 					range: getRange(context.token.range),
 				};
 			}
+
 			break;
 		}
 	}
@@ -452,6 +471,7 @@ function getDefinition(
 
 							return label == target;
 						});
+
 						result.push(
 							linkWithRange(
 								filepath,
@@ -463,9 +483,11 @@ function getDefinition(
 					// continue
 				}
 			}
+
 			break;
 		}
 	}
+
 	return result;
 }
 
@@ -483,6 +505,7 @@ function getFormatted(file: string, lines: number): ls.TextEdit[] {
 			},
 		});
 	}
+
 	return result;
 }
 
@@ -500,6 +523,7 @@ function getDocumentSymbol(file: string): ls.DocumentSymbol[] {
 		if (symbol.children) {
 			result.children = symbol.children.map(mapToDocumentSymbol);
 		}
+
 		return result;
 	};
 

@@ -9,24 +9,31 @@ export type HelpType = "all" | "function" | "variable";
 // much as possible, or don't depend on vscode-languageserver at all.
 export interface Location {
 	file: string;
+
 	line: number;
+
 	column: number;
 }
 
 export interface Range {
 	begin: Location;
+
 	end: Location;
 }
 
 export interface Error {
 	location: Location;
+
 	ranges: Range[];
+
 	message: string;
+
 	help: string;
 }
 
 export interface Context {
 	root: string;
+
 	token?: { type: TokenType; value: string; range: Range };
 
 	function?: { name: string; arguments: string[] };
@@ -36,20 +43,27 @@ export interface Context {
 
 export interface Scope {
 	declares: { function: string; arguments: string[]; range: Range }[];
+
 	symbols: GNDocumentSymbol[];
 }
 
 export interface Help {
 	basic: string;
+
 	full: string;
+
 	link: string;
 }
 
 export interface GNDocumentSymbol {
 	kind: ls.SymbolKind;
+
 	name: string;
+
 	range: Range;
+
 	selectionRange: Range;
+
 	children?: GNDocumentSymbol[];
 }
 

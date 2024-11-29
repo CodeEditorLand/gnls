@@ -4,7 +4,9 @@ interface FunctionDetail {
 
 interface VariableDetail {
 	isBuiltin?: boolean;
+
 	isInput?: boolean;
+
 	isLabel?: boolean;
 }
 
@@ -248,11 +250,13 @@ const data = {
 	functionDetail: {
 		assert: {}, // (condition[, error])
 		declare_args: {}, // () {}
+
 		defined: {}, // (identifier)
 		exec_script: {}, // (filename, arguments = [], input_conversion = "", file_dependencies = [])
 		filter_exclude: {}, // (values, patterns)
 		filter_include: {}, // (values, patterns)
 		foreach: {}, // (element, list) {}
+
 		forward_variables_from: {}, // (scope, variables, ignores = [])
 		get_label_info: {}, // (label, attribute)
 		get_path_info: {}, // (path, attribute)
@@ -261,19 +265,24 @@ const data = {
 		import: {}, // (file)
 		not_needed: {}, // ([scope, ]variables, ignores = [])
 		pool: {}, // (name) {}
+
 		print: {}, // (...args)
 		process_file_template: {}, // (files, template)
 		read_file: {}, // (file, input_conversion)
 		rebase_path: {}, // (paths, new_base = "", current_base = ".")
 		set_default_toolchain: {}, // (toolchain)
 		set_defaults: {}, // (target_type) {}
+
 		split_list: {}, // (list, n)
 		string_join: {}, // (separator, strings)
 		string_replace: {}, // (string, old, new[, max])
 		string_split: {}, // (string[, separator])
 		template: {}, // (name) {}
+
 		tool: {}, // (type) {}
+
 		toolchain: {}, // (name) {}
+
 		write_file: {}, // (filename, data, output_conversion = "")
 	} as Record<string, FunctionDetail>,
 	variableDetail: {
