@@ -42,9 +42,9 @@
 		"@codeeditorland/plugin-typescript": "0.0.1",
 		"@codeeditorland/uri": "0.0.1",
 		"@codeeditorland/vsce": "0.0.1",
-		"@types/node": "22.13.0",
+		"@types/node": "22.13.1",
 		"node-addon-api": "8.3.0",
-		"node-gyp": "11.0.0",
+		"node-gyp": "11.1.0",
 		"tslib": "2.8.1"
 	},
 	"extensionKind": [
